@@ -1,4 +1,5 @@
 import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
+import { Exclude } from "class-transformer";
 import { v4 as uuid } from 'uuid';
 
 @Entity("users") //dentro do parenteses nome da tabela que está sendo referenciada 
@@ -15,6 +16,7 @@ import { v4 as uuid } from 'uuid';
      @Column()
      admin: boolean;
 
+     @Exclude()
      @Column()
      password: string;
 
